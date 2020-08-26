@@ -7,11 +7,22 @@
   </head>
   <body>
     <a-scene>
-      <a-entity position="0 1.8 4">
+      <a-entity camera look-controls wasd-controls>
+        <a-entity cursor="fuse: true;"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: blue; shader: flat">
+            <a-animation begin="click" easing="ease-in" attribute="scale" dur="150"
+               fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+            <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500"
+               fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+        </a-entity>
+      </a-entity>
+      <!--<a-entity position="0 1.8 4">
         <a-camera look-controls>
           <a-cursor color="#4CC3D9"></a-cursor>
         </a-camera>
-      </a-entity>
+      </a-entity> -->
       <!--<a-image src="img/t.png" position="-0.5 1 2" rotation="0 0 0"><a-link href="https://twitter.com/?lang=ja;" target="_BLANK" rel="noopener"></a-link></a-image> -->
       <a-image src="img/L.png" position="-1 2 2" rotation="0 0 0" link="href: https://www.linebiz.com/jp/service/line-official-account/;"></a-image>
       <a-image src="img/g.png" position="0 3 2" rotation="0 0 0" link="href: https://www.google.com/intl/ja/gmail/about/;"></a-image>
